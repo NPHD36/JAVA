@@ -1,0 +1,148 @@
+//Inheritance
+import java.util.*;
+
+class A
+{
+    String ch;
+    public A()
+    {
+        this.ch="A";
+        System.out.println("Constructor "+ch);
+    }
+    public void printA()
+    {
+        System.out.println("in A");
+    }
+}
+class B extends A
+{
+    String ch1;
+    public B()
+    {
+        this.ch1="B";
+        System.out.println("Constructor "+ch1);
+    }
+    public void printB()
+    {
+        System.out.println("in B");
+    }
+}
+public class inheritance
+{
+    public static void main(String[] args) {
+        B a = new B();
+        a.printB();
+        a.printA();
+    }
+}
+
+//Compostion
+import java.util.*;
+
+class B2
+{
+    int ch1;
+    class A2
+    {
+        static int ch;
+        public A2()
+        {
+            this.ch=10;
+        }
+        public void print()
+        {
+            System.out.println(ch);
+        }
+    }
+    public B2()
+    {
+        this.ch1=12;
+    }
+    public void print_B()
+    {
+        System.out.println(A2.ch);
+    }
+}
+public class composition
+{
+    public static void main(String[] args) {
+        B2 b = new B2();
+        b.print_B();
+    }
+}
+
+//Aggregation
+import java.util.*;
+
+class A1
+{
+    int ch;
+    public A1()
+    {
+        this.ch=10;
+    }
+    public void print()
+    {
+        System.out.println(ch);
+    }
+}
+
+class B1
+{
+    A1 a = new A1();
+    public void print_B()
+    {
+        a.print();
+    }
+}
+public class aggregation {
+    public static void main(String[] args) {
+        B1 b = new B1();
+        b.print_B();
+    }
+}
+
+
+//sample
+import java.util.*;
+
+class cal
+{
+    int a,b;
+    public cal()
+    {
+        this.a=0;
+        this.b=0;
+    }
+    public cal(int p,int q)
+    {
+        this.a=p;
+        this.b=q;
+    }
+    public void getval()
+    {
+        Scanner obj = new Scanner(System.in);
+        System.out.print("Enter the number a and b : ");
+        a=obj.nextInt();
+        b=obj.nextInt();
+    }
+    public int add()
+    {
+        return a+b;
+    }
+    public void print(){
+        System.out.println(a+" "+b);
+    }
+}
+public class sample
+{
+    public static void main(String[] args) {
+        cal c=new cal();
+        c.print();
+        c.getval();
+        System.out.println(c.add());
+        c.print();
+        cal c1=new cal(3,4);
+        c1.print();
+    }
+}
